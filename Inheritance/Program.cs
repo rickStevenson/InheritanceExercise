@@ -7,11 +7,6 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            /*Create an object of your Bird class
-             *  give values to your members using the object of your Bird class
-             *  
-             * Creatively display the class member values 
-             */
             var bird = new Bird()
             {
                 Classification = "owl",
@@ -21,15 +16,11 @@ namespace Inheritance
             };
             Console.WriteLine($"This {bird.AnimalType} is an {bird.Classification}. " +
                 $"It has {bird.Legs} legs, {bird.Color} {bird.SkinType} and can fly. " +
-                $"It has a { bird.WingSpan}ft wingspan " +
+                $"It has a {bird.WingSpan}ft wingspan " +
                 $"It's habitat is land and {bird.Habitat}.");
 
 
-            /*Create an object of your Reptile class
-             *  give values to your members using the object of your Reptile class
-             *  
-             * Creatively display the class member values 
-             */
+
             var lizard = new Reptile()
             {
                 Classification = "lizard",
@@ -41,6 +32,43 @@ namespace Inheritance
                 $"It has {lizard.Legs} legs, {lizard.SkinType}, has a backbone and lays eggs. " +
                 $"It lives to be about {lizard.AgeLength} years old. " +
                 $"It's primary habitat is on {lizard.Habitat}. ");
+
+
+            //Adam and Eve Kata
+            //Use if the Create() isn't static
+            //var god = new God();
+            //god.Create();
+
+            //Use if Create() is static
+            var firstHumans =  God.Create();
+            
         }
+    }
+    public class God
+    {
+        public static Human[] Create()
+        {
+            var adam = new Man();
+            var eve = new Woman();
+
+            Human[] firstHumans = new Human[2];
+
+            firstHumans[0] = adam;
+            firstHumans[1] = eve;
+
+            return firstHumans;
+        }
+    }
+    public class Human
+    {
+
+    }
+    public class Man : Human
+    {
+
+    }
+    public class Woman : Human 
+    { 
+    
     }
 }
